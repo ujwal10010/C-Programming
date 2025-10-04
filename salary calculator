@@ -1,0 +1,28 @@
+#include<stdio.h>   
+int main(){
+    float total , result ;
+    int B;
+    printf("Enter Your Basic Salary ");
+    scanf("%d",&B);
+    if( B <= 10000){
+        printf(" HRA = 20 percent & DA = 30 percent of Basic Salary\n ");
+        total =(( B * 0.2 ) + (B * 3/10 ));
+        result=(total+B);
+        printf("Your Total Salary Is %.2f Rs",result);
+    }
+    else if( B <= 20000){
+        printf(" HRA = 25 percent & DA = 40 percent of Basic Salary\n ");
+
+        total =(( B * 0.25 ) + (B * 2/5 ));
+            result=(total+B);
+        printf("Your Total Salary Is %.2f Rs",result);
+    }
+    else if( B > 20000){
+        printf(" HRA = 30 percent & DA = 50 percent of Basic Salary\n ");
+
+        total =(( B * 3/10 ) + (B * 1/2 ));
+            result=(total+B);
+        printf("Your Total Salary Is %.2f Rs",result);
+    }
+    return 0;
+}
