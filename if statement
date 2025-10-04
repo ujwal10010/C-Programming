@@ -1,0 +1,12 @@
+//program to print the cube of given number if number is even
+#include<stdio.h>
+int main(){
+    int num,cube;
+    printf("Enter a number: ");
+    scanf("%d",&num);
+    if(num %2 ==0){
+        cube = num*num*num;
+        printf("cube of %d is %d",num,cube);
+}
+return 0;
+}
