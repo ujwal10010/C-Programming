@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main (){
+    int i,x,j;
+    printf ("Enter the Height of Triangle ");
+    scanf("%d",&x);
+    for(i=1; i<=x ; i++){
+        for(j=1; j<=i; j++){
+        printf("*",j);
+    }
+    printf("\n",i);
+}
+    return 0;
+}
