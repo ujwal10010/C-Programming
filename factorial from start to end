@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main (){
+    int n,y;
+    printf("Enter the value of start point");
+    scanf("%d",&n);
+    printf("Enter the value of end point");
+    scanf("%d",&y);
+    for(int num=n; num<=y; num++){
+        int fact = 1;
+        for(int i=1; i<=num; i++){
+            fact = fact*i;
+        } 
+    
+        printf("Factorial of %d is %d\n ",num,fact);
+    }
+    return 0;
+}
