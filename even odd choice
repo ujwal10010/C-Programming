@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main (){
+    int i,N,x,y;
+    printf ("Enter 1 for Even\n");
+    printf ("Enter 2 for Odd\n");
+    printf("\n\n");
+    printf ("Enter Your Number 1 or 2: ");
+    scanf("%d",&N);
+    if(N==1 ){
+        printf("Enter for Even number\n");
+        scanf("%d",&x);
+        for(i=0; i<=x ; i=i+2){
+    printf(" %d ",i);
+}
+    }
+    else if (N==2){
+        printf("Enter for Even number\n");
+        scanf("%d",&y);
+        for(i=1; i<=y ; i=i+2){
+    printf(" %d ",i);
+}
+    }
+    else{
+        printf("Invalid Number!!!!");
+    }
+    return 0;
+}
