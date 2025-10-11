@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    int f,n,i,mul=1,t;
+    printf("Table of Number \n");
+    scanf("%d",&n);
+    printf("From where ");
+    scanf("%d",&f);
+    printf("To where");
+    scanf("%d",&t);
+    
+    for(i=f; i>=t; i--){
+        mul=n*i;
+
+    printf("%d \n",mul);
+}
+    return 0;
+}
