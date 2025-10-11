@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main (){
+    int i,x,y,j;
+    printf ("Enter the length of Rectangle ");
+    scanf("%d",&y);
+    printf ("Enter the width of Rectangle ");
+    scanf("%d",&x);
+    for(i=1; i<=x ; i++){
+        for(j=1; j<=y ; j++){
+        printf("*",j);
+    }
+    printf("\n",i);
+}
+    return 0;
+}
