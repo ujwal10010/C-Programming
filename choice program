@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+    printf("1. Area and Perimeter of circle\n");
+    printf("2. Area and Perimeter of Square\n");
+    printf("3. Area and Perimeter of Ractangle\n");
+    int choice;
+    float area, per, radius, sides, length, width;
+    const float pi = 3.1426;;
+    printf("Enter your choice : ");
+    scanf("%d", &choice);
+    switch(choice){
+        case 1:
+            printf("Enter Radius : ");
+            scanf("%f", &radius);
+            area = pi * radius *radius;
+            per = 2*pi*radius;
+            printf("Area of circle \t\t %f\n", area);
+            printf("Perimeter of circle \t %f\n", per);
+            break;
+        case 2:
+            printf("Enter Sides of Square : ");
+            scanf("%f", &sides);
+            area = sides * sides;
+            per = 4 * sides;
+            printf("Area of Square \t\t %f\n", area);
+            printf("Perimeter of Square \t %f\n", per);
+            break;
+        case 3:
+            printf("Enter length and width of rectangle : ");
+            scanf("%f%f", &length, &width);
+            area = length * width;
+            per = 2 *(length + width);
+            printf("Area of rectangle \t %f\n", area);
+            printf("Perimeter of rectangle \t %f\n", per);
+            break;
+        default:
+            printf("Invalid Choice !!!!!\n");
+    }
+    return 0;
+}
