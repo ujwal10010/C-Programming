@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main (){
+    int n,y;
+    printf("Enter the value of start point");
+    scanf("%d",&n);
+    for(int num=0; num<=n; num++){
+        for(int i=1; i<=num; i++){
+           printf("* ");
+        } 
+    printf("* \n");
+    }
+    return 0;
+}
