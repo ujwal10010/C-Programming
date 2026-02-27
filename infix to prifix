@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<string.h>
+#define MAX 100
+
+int precedence(char op){
+    switch(op){
+        case '+':
+        case '-':
+            return 1;
+        case '*':
+        case '/':
+            return 2;
+        case '^':
+            return 3;
+        default:
+            return 0;
+    }
+}
+
+void reverse(char *exp){
+    int i=0,j=strlen(exp)-1;
+    while(i<j){
+        char temp=exp[i];
+        exp[i]=exp[j];
+        exp[j]=temp;
+        i++;
+        j--;
+    }
+}
+
+char* convertInfixToPrefix(char* infix){
+    int len=strlen(infix);
+    char *prefix=(char*)malloc(len+1);
+    char stack[MAX];
+    int top=-1,k=0;
+
+    reverse(infix);
+
+    for(int i=0;i<len;i++){
+        if(infix[i]=='(')
+            infix[i]=')';
+        else if(infix[i]==')')
+            infix[i]='(';
+    }
+
+    for(int i=0;i<len;i++){
+        char ch=infix[i];
+
+        if(isalnum(ch)){
+            prefix[k++]=ch;
+        }
+        else if(ch=='('){
+            stack[++top]=ch;
+        }
+        else if(ch==')'){
+            while(top!=-1 && stack[top]!='(')
+                prefix[k++]=stack[top--];
+            top--;
+        }
+        else{
+            while(top!=-1 && precedence(stack[top])>=precedence(ch)){
+                prefix[k++]=stack[top--];
+            }
+            stack[++top]=ch;
+        }
+    }
+
+    while(top!=-1)
+        prefix[k++]=stack[top--];
+
+    prefix[k]='\0';
+    reverse(prefix);
+    return prefix;
+}
+
+int main(){
+    char infix[MAX];
+    scanf("%s",infix);
+    char *prefix=convertInfixToPrefix(infix);
+    printf("%s",prefix);
+     free(prefix);
+   
+    return 0;
+}
